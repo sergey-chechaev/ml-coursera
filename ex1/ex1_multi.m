@@ -51,7 +51,6 @@ fprintf('Normalizing Features ...\n');
 
 [X mu sigma] = featureNormalize(X);
 
-fprintf('%f\n', X);
 % Add intercept term to X
 X = [ones(m, 1) X];
 
@@ -84,7 +83,7 @@ fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
 alpha = 0.01;
-num_iters = 400;
+num_iters = 2000;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
@@ -105,7 +104,7 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+price = theta' * [1; (1650 - mu(1,1))/sigma(1,1); (3 - mu(1,2))/sigma(1,2)]; % You should change this
 
 
 % ============================================================
